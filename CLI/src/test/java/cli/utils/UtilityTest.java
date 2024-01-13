@@ -6,6 +6,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static utils.Utility.sleep;
+
 @DisplayName("Test Utility class of CLI")
 class UtilityTest {
     @BeforeAll
@@ -36,6 +38,7 @@ class UtilityTest {
         // Instagram Video Post
         String filename = Utility.findFilenameInLink("https://www.instagram.com/p/BDin77DxtAH/");
         Assertions.assertEquals("Video by oreo.mp4", filename);
+        sleep(3000);
         // Instagram Reel
         filename = Utility.findFilenameInLink("https://www.instagram.com/reel/C0y8FOLMjGu/");
         Assertions.assertEquals("Video by github.mp4", filename);
