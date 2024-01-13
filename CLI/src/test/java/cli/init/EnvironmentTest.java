@@ -1,6 +1,6 @@
-package cli_init;
+package cli.init;
 
-import cli_utils.MessageBroker;
+import cli.utils.MessageBroker;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

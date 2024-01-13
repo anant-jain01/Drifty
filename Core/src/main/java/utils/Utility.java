@@ -229,6 +229,7 @@ public class Utility {
                 BufferedReader reader = new BufferedReader(new InputStreamReader(p.getInputStream()));
                 String line;
                 while ((line = reader.readLine()) != null) {
+                    System.out.println(line);
                     if (line.contains("ERROR") || line.contains("WARNING")) {
                         if (line.contains("unable to extract username")) {
                             M.msgLinkError("The Instagram post/reel is private!");
@@ -240,6 +241,7 @@ public class Utility {
                             M.msgLinkError("The YouTube video is unavailable!");
                         } else {
                             M.msgLinkError("Failed to retrieve filename!");
+                            System.out.println("Failed line: " + line);
                         }
                         break;
                     }

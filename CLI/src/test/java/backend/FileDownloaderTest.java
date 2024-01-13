@@ -1,8 +1,8 @@
 package backend;
 
-import cli_init.Environment;
-import cli_utils.MessageBroker;
-import cli_utils.Utility;
+import cli.init.Environment;
+import cli.utils.MessageBroker;
+import cli.utils.Utility;
 import org.apache.commons.io.FileUtils;
 import org.junit.jupiter.api.*;
 

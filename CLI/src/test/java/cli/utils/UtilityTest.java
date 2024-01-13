@@ -1,6 +1,6 @@
-package cli_utils;
+package cli.utils;
 
-import cli_init.Environment;
+import cli.init.Environment;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
