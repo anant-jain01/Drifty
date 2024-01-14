@@ -65,7 +65,7 @@ public class FileDownloaderTest {
         String filename = Utility.findFilenameInLink(link);
         FileDownloader fileDownloader = new FileDownloader(link, filename, Paths.get(System.getProperty("user.dir"), "target", "test", "data", "instagram").toAbsolutePath().toString());
         fileDownloader.run();
-        File file = Paths.get(System.getProperty("user.dir"), "target", "test", "data", "instagram", filename).toAbsolutePath().toFile();
+        File file = new File(Paths.get(System.getProperty("user.dir"), "target", "test", "data", "instagram", filename).toString());
         Assertions.assertTrue(file.exists());
         Assertions.assertTrue(file.isFile());
         Assertions.assertTrue(file.length() > 0);
