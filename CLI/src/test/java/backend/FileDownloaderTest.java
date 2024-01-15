@@ -11,7 +11,6 @@ import java.io.IOException;
 import java.nio.file.Paths;
 
 @DisplayName("Test File Downloader of CLI")
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class FileDownloaderTest {
     @BeforeAll
     @DisplayName("Initialize Test Environment")
@@ -32,7 +31,6 @@ public class FileDownloaderTest {
     }
 
     @Test
-    @Order(1)
     @DisplayName("Test GitHub File Download")
     void testGitHubFileDownload() {
         String link = "https://github.com/SaptarshiSarkar12/Drifty/blob/master/.github/workflows/build.yml";
@@ -47,7 +45,6 @@ public class FileDownloaderTest {
     }
 
     @Test
-    @Order(2)
     @DisplayName("Test YouTube File Download")
     void testYouTubeFileDownload() {
         String link = "https://www.youtube.com/watch?v=pBy1zgt0XPc&pp=ygUGZ2l0aHVi";
@@ -62,7 +59,6 @@ public class FileDownloaderTest {
     }
 
     @Test
-    @Order(3)
     @DisplayName("Test Instagram File Download")
     void testInstagramFileDownload() {
         String link = "https://www.instagram.com/p/BDin77DxtAH/?utm_source=ig_embed";
@@ -77,7 +73,6 @@ public class FileDownloaderTest {
     }
 
     @Test
-    @Order(4)
     @DisplayName("Test Spotify File Download")
     void testSpotifyFileDownload() {
         String link = "https://open.spotify.com/track/0IGXY47K2ha3AHfX57wY1O";
@@ -93,7 +88,6 @@ public class FileDownloaderTest {
     }
 
     @Test
-    @Order(5)
     @DisplayName("Test Other File Download")
     void testOtherFileDownload() {
         String link = "https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.deb";

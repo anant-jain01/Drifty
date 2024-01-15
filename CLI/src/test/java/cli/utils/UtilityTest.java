@@ -38,7 +38,7 @@ class UtilityTest {
         // Instagram Video Post
         String filename = Utility.findFilenameInLink("https://www.instagram.com/p/BDin77DxtAH?utm_source=ig_embed");
         Assertions.assertEquals("Video by oreo.mp4", filename);
-        sleep(3000);
+        sleep(12000); // Wait for 12 seconds
         // Instagram Reel
         filename = Utility.findFilenameInLink("https://www.instagram.com/reel/C0y8FOLMjGu?utm_source=ig_embed");
         Assertions.assertEquals("Video by github.mp4", filename);
