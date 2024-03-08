@@ -26,7 +26,7 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha }}
       - name: Build artifacts for aarch64
-        uses: uraimo/run-on-arch@v2
+        uses: uraimo/run-on-arch-action@v2
         with:
           arch: aarch64
           distro: ubuntu_latest
