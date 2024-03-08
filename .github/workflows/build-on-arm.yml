@@ -53,7 +53,6 @@ jobs:
             gcc -c config/missing_symbols.c -o config/missing_symbols-ubuntu-latest.o
           dockerRunArgs: |
             --volume "${{ github.workspace }}/output:${{ matrix.mode }}/target"
-            --workdir "/"
           run: |
             if ${{ matrix.mode == 'CLI' }}; then
                 mvn -U clean install
@@ -62,6 +61,8 @@ jobs:
                 mvn -U clean install
                 mvn -P build-drifty-gui-for-ubuntu-latest gluonfx:build gluonfx:package -rf :GUI
             fi
+      - name: Show directory contents
+        run: ls ${{ github.workspace }}/output
       - name: Push generated artifacts for linux-arm for ${{ matrix.mode }}
         uses: actions/upload-artifact@v4
         with:
