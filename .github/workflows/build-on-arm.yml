@@ -17,7 +17,9 @@ jobs:
   build-linux-arm:
     name: Build and Package Drifty for linux arm
     runs-on: ubuntu-latest
-    container: arm64v8/ubuntu:latest
+    container:
+      image: arm64v8/ubuntu:latest
+      options: -it
     strategy:
       matrix:
         mode: [CLI, GUI]
