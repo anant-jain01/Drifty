@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: arm64v8/ubuntu:latest
-      options: --platform linux/arm64/v8, -i
+      options: --platform linux/arm64/v8 -i
     strategy:
       matrix:
         mode: [CLI, GUI]
