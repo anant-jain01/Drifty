@@ -31,6 +31,8 @@ jobs:
           arch: aarch64
           distro: ubuntu22.04
           githubToken: ${{ github.token }}
+          setup: |
+            mkdir -p /output
           install: |
             sudo apt-get update
             sudo apt-get install -y libasound2-dev libavcodec-dev libavformat-dev libavutil-dev libfreetype6-dev
@@ -50,7 +52,7 @@ jobs:
             export PATH=/opt/maven/bin:/opt/graalvm/bin:$PATH
             gcc -c config/missing_symbols.c -o config/missing_symbols-ubuntu-latest.o
           dockerRunArgs: |
-            --volume "${{ github.workspace }}:${{ matrix.mode }}/target"
+            --volume "${{ github.workspace }}/output:${{ matrix.mode }}/target"
             --workdir "/"
           run: |
             if ${{ matrix.mode == 'CLI' }}; then
@@ -64,7 +66,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: linux-arm-${{ matrix.mode }}
-          path: ${{ matrix.mode }}/target
+          path: ${{ github.workspace }}/output
 
   build-macos-arm:
     name: Build and Package Drifty for macos arm (M1)
